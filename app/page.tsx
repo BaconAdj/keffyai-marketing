@@ -27,7 +27,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="https://keffy.ai" className="btn-primary text-lg">
-              Try Keffy Beta
+              Try Keffy Early Beta
             </a>
             <Link href="#about" className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-navy text-lg">
               Learn More
@@ -148,7 +148,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Try Keffy Beta / Feedback Section */}
+      {/* Try Keffy Early Beta / Feedback Section */}
       <section id="beta" className="section bg-navy text-white">
         <div className="container-custom max-w-3xl mx-auto text-center">
           <h2 className="heading-medium text-white mb-6">Try Keffy Today</h2>
