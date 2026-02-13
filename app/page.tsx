@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import WaitlistForm from "@/components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -23,13 +22,13 @@ export default function Home() {
             Your Personal Travel Concierge
           </h1>
           <p className="text-xl md:text-2xl text-sand/90 mb-12 max-w-3xl mx-auto font-light">
-            Experience the world through the eyes of a luxury travel consultant, 
+            Experience seamless travel with the assistance of a luxury travel consultant 
             powered by artificial intelligence
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="#waitlist" className="btn-primary text-lg">
-              Join the Waitlist
-            </Link>
+            <a href="https://keffy.ai" className="btn-primary text-lg">
+              Try Keffy Beta
+            </a>
             <Link href="#about" className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-navy text-lg">
               Learn More
             </Link>
@@ -149,17 +148,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Coming Soon / Waitlist Section */}
-      <section id="waitlist" className="section bg-navy text-white">
+      {/* Try Keffy Beta / Feedback Section */}
+      <section id="beta" className="section bg-navy text-white">
         <div className="container-custom max-w-3xl mx-auto text-center">
-          <h2 className="heading-medium text-white mb-6">Coming Soon</h2>
+          <h2 className="heading-medium text-white mb-6">Try Keffy Today</h2>
           <p className="text-xl text-sand/90 mb-12">
-            Keffy is preparing to welcome travelers who seek more than just a booking platform. 
-            Join our waitlist to be among the first to experience travel planning reimagined.
+            Keffy is live in early beta! Start planning your next adventure with AI-powered 
+            travel expertise. We'd love your feedback as we continue to improve.
           </p>
           
-          {/* Email Signup Form */}
-          <WaitlistForm />
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+            <a
+              href="https://keffy.ai"
+              className="bg-gold text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#b89451] transition-colors w-full sm:w-auto"
+            >
+              Start Planning at Keffy.ai
+            </a>
+            <a
+              href="mailto:general@keffyai.com?subject=Keffy%20Feedback&body=Hi%20Keffy%20team%2C%0A%0AI'd%20like%20to%20share%20some%20feedback%3A%0A%0A"
+              className="border-2 border-gold text-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold hover:text-navy transition-colors w-full sm:w-auto"
+            >
+              Share Feedback
+            </a>
+          </div>
 
           {/* Social Media Links */}
           <div className="space-y-4">
