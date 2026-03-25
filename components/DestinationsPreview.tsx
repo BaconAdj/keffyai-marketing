@@ -26,15 +26,18 @@ export default function DestinationsPreview() {
         {preview.map((dest) => (
           <Link key={dest.slug} href={`/destinations/${dest.slug}`} className="block no-underline group">
             <article className="rounded-xl overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer">
-              <div className="relative h-48 overflow-hidden">
+
+              {/* 16:9 natural aspect ratio */}
+              <div className="relative w-full aspect-video overflow-hidden">
                 <Image
                   src={dest.heroImage}
                   alt={`${dest.name}, ${dest.country}`}
                   fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={90}
+                  className="object-cover object-center group-hover:scale-103 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <span className="text-lg block mb-0.5">{dest.emoji}</span>
                   <h3 className="font-light text-white text-xl leading-tight drop-shadow">{dest.name}</h3>
@@ -44,6 +47,7 @@ export default function DestinationsPreview() {
                   3 Days
                 </span>
               </div>
+
               <div className="p-5">
                 <p className="text-[#4a4040] text-sm leading-relaxed mb-4 line-clamp-2">{dest.tagline}</p>
                 <div className="border-t border-[#EDE8DF] pt-3.5 flex justify-between items-center">
@@ -57,11 +61,9 @@ export default function DestinationsPreview() {
       </div>
 
       <div className="text-center">
-        <Link
-          href="/destinations"
-          className="inline-block bg-[#20304A] hover:bg-[#2a4272] text-white px-10 py-4 text-sm font-bold uppercase tracking-widest transition-colors rounded no-underline"
-        >
-          View All {destinations.length} Destinations
+        <Link href="/destinations"
+          className="inline-block bg-[#20304A] hover:bg-[#2a4272] text-white px-10 py-4 text-sm font-bold uppercase tracking-widest transition-colors rounded no-underline">
+          View All Destinations
         </Link>
       </div>
     </section>
